@@ -103,6 +103,7 @@ public class CalculateCapAction extends Action {
      */
     private double numerateGrade(String grade) throws GradeNotSpecifiedException {
         double gradeValue;
+        assert grade != "" : "Grade should not be empty";
         switch (grade) {
         case "A+":
         case "A":
