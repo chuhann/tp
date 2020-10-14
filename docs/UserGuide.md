@@ -826,21 +826,21 @@ Expected outcome:
 A cheat sheet of commonly used commands:
 **Action** | **Format, Examples**
 ------------ | -------------
-**add **|`add -task [index] -mod [module code]` <br>e.g. `add -task 1 -mod CS2113`
+**add**|`add -task [index] -mod [module code]` <br>e.g. `add -task 1 -mod CS2113`
 **bye**| `bye`
 **cap**|`cap [-option] [module] [grade] {[module] [grade]...}` <br>e.g. `cap -m M1 G1 M2 G2`
 **clear** | `clear`
 **deadline**|`deadline [description] -by [time]` <br>e.g. `deadline project submission -by 21/9/15 1:12`
 **delete**|`delete [index]` <br>e.g. `delete 2`
-**detail **|`detail [index / module code]` <br>e.g. `detail CS2113T`
-**done **|`delete [index]` <br>e.g. `done 2`
+**detail**|`detail [index / module code]` <br>e.g. `detail CS2113T`
+**done**|`delete [index]` <br>e.g. `done 2`
 **edit**|`edit [-options][-target]` <br>e.g. `edit`
 **event**|`event [description] -at [time]` <br>e.g. `event concert -at May 13 2020 8:00`
 **fancy**|`fancy [option]` <br>e.g. `fancy`
 **find**|`find [keyword]` <br>e.g. `find exam`
 **focus**|`focus [deadline / todo / event / task / mod / selected / taken]` <br>e.g. `focus deadline`
 **help**|`help [options]` <br>e.g. `help deadline`
-**list **|`list date [asc / desc / spec “date”]` <br>e.g. `list date asc`
+**list**|`list date [asc / desc / spec “date”]` <br>e.g. `list date asc`
 **mc**|`mc [-option] [-details]` <br>e.g. `mc -p`
 **next**|`next [option]` <br>e.g. `next`
 **plain**|`plain [option]` <br>e.g. `plain`
