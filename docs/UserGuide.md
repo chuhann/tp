@@ -1,5 +1,19 @@
 # User Guide
 
+* [Introduction](#Introduction)
+* [Quick Start](#Quick-Start)
+    * [Features](#Features)
+    * [`add` - Add task(s) to module(s)](#add---Addtask(s)-to-module(s))
+    * [`bye` - Quit the program](#bye-Quit-the-program)
+    * [List all tasks: `list`](#listing-all-tasks-list)
+    * [Marking a task as done: `done`](#marking-a-task-as-done-done)
+    * [Deleting a task: `delete`](#deleting-a-task-delete)
+    * [Finding a task: `find`](#finding-a-task-find)
+    * [Exit the Duke: `bye`](#exiting-the-duke-bye)
+    * [Save the data](#saving-the-data)
+* [Command Summary](#command-summary)
+
+
 ## Introduction
 
 Domsun is a CLI program that allows users to manage tasks and modules. <br>
