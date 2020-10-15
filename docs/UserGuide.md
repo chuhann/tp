@@ -10,7 +10,7 @@ create reminders and calculate their MCs / CAPs.
 
 
 1. Ensure that you have Java 11 or above installed.
-2. Download the latest version of `Duke` from [Our Release Page](http://link.to/duke).
+2. Download the latest version of `Duke` from [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).
 3. Copy the file to the folder you want to use as the home folder for your Mobile Nusmod.
 4. Open the Command Prompt if you are running on Windows or Terminal if you are running on Mac OS. 
 5. Navigate to your home folder and type ‘java -jar domnus.jar’
