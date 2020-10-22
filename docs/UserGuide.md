@@ -35,13 +35,13 @@
 * [Command Summary](#command-summary)
 
 
-## Introduction
+## 1. Introduction
 
 Domsun is a CLI program that allows users to manage tasks and modules. <br>
 Users will be able to browse and select modules, create and arrange tasks, add tasks to modules,<br>
 create reminders and calculate their MCs / CAPs.
 
-## Quick Start
+## 2. Quick Start
 
 
 1. Ensure that you have Java 11 or above installed.
@@ -52,7 +52,7 @@ create reminders and calculate their MCs / CAPs.
 6. Type ‘bye’ to terminate your session.  
 
 
-## Features 
+## 3. Features 
 
 #### Addition and removal of tasks
 The program allows user to add or delete tasks from the task list.<br>
@@ -102,7 +102,7 @@ The program allows users to add some tasks to modules using the `add` command.
 #### Reminders
 The program allows user to set reminders at certain time, or remind themselves of the most urgent tasks on start-up.
 
-## Usage (alphabetical order)
+## 4. Usage (alphabetical order)
 
 ### `add` - Add task to module
 
@@ -850,17 +850,21 @@ Expected outcome:
     ____________________________________________________________
    ```
 
-## FAQ
+## 5. FAQ
 
 **Q**: How do I transfer my data to another computer? 
 
 **A**: Send the `data` folder in your program directory to the program directory on your new device.
 
+**Q**: Where do i install java 11 from? 
+
+**A**: Java 11 can be downloaded from the Oracle website. [https://www.oracle.com/technetwork/java/javase/downloads/index.html](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+
 **Q**: How do I run this program ?
 
 **A**: To run this program execute the jar file by ‘java -jar domnus.jar’
 
-## Command Summary
+## 6. Command Summary
 
 A cheat sheet of commonly used commands:
 **Action** | **Format, Examples**
