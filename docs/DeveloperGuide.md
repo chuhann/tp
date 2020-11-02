@@ -77,7 +77,7 @@ Once CI processed the user input, DOMNUS proceeds to redirect the input to Execu
 
 **4.7 Flow of DOMSUN**<br>
 The sequence diagram below shows the main interaction of classes with each other throughout the whole lifecycle of DOMSUM.
-![uml](Images/DOMSUM_Main_Flow.png)
+![uml](Images/DOMNUS_Main_Flow.png)
 
 ## 5. Implementation<br>
 This section highlights some of our project's key feature and its implementation. 
