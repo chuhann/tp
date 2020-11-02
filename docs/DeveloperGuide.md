@@ -28,7 +28,7 @@
 ## 2. Setting Up
 
 1.  Ensure that you have Java 11 or above installed.
-2.  Download the latest version of  `Duke`  from  [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).
+2.  Download the latest version of  `DOMNUS`  from  [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).
 3.  Copy the file to the folder you want to use as the home folder for your Mobile Nusmod.
 4.  Open the Command Prompt if you are running on Windows or Terminal if you are running on Mac OS.
 5.  Navigate to your home folder and type ‘java -jar domnus.jar’
@@ -43,7 +43,7 @@ The **Architecture Diagram** below represents a high-level design overview of th
 
 
 **3.2 Main Layer**<br>
-For the `main` layer, it contains a single class known as `Duke`. 
+For the `main` layer, it contains a single class known as `DOMNUS`. 
 
 **3.3 UI Layer**<br>
 Main gets user input and displays messages through the use of UI component. 
@@ -56,17 +56,17 @@ UI gets user input through *nextline()*, and renders strings as a user-comprehen
 *update(String, Data)*.
 
 UI's interaction with the rest of the program<br>
-UI passes the user's input string out to the Duke object, which then passes the string to the Command Interpreter layer.
+UI passes the user's input string out to the DOMNUS object, which then passes the string to the Command Interpreter layer.
 UI also reads data from the Data object for refreshing purposes, but does not modify it. 
 
 **1.3 Command Interpreter Layer**<br>
-Upon receiving command from the UI, Duke would pass the entire user input into Command Interpreter (CI)
+Upon receiving command from the UI, DOMNUS would pass the entire user input into Command Interpreter (CI)
 
 **1.4 Execute Layer**<br>
-Once CI processed the user input, duke proceeds to redirect the input to Execute for execution of action. 
+Once CI processed the user input, DOMNUS proceeds to redirect the input to Execute for execution of action. 
 
 **1.5 Storage Layer**<br>
-Once CI processed the user input, duke proceeds to redirect the input to Execute for execution of action. 
+Once CI processed the user input, DOMNUS proceeds to redirect the input to Execute for execution of action. 
 
 **1.6 Flow of DOMSUN**<br>
 The sequence diagram below shows the main interaction of classes with each other throughout the whole lifecycle of DOMSUM.
@@ -92,13 +92,13 @@ A typical flow of execution would be:
 ### 4.2 Checker Feature 
 ![here](Images/Checker_Diagram.png)
 
-The checker mechanism is facilitated by the utility class `Checker`. It is an independent class on its own without extensions and is stored under the `Data` package of our app. The class implements the following operations: 
+The checker feature is facilitated by the utility class `Checker`. It is an independent class on its own without extensions and is stored under the `Data` package of our app. The class implements the following operations: 
 
  - `checkDuplicates()`- Calls the checkClash method and return the status of boolean variable `isClash` .
  - `checkClash(ArrayList< item >, Item)`- Updates `isClash` once a duplicate item is found in the list.
  - `checkRecurrenceDate(Task)` - Checks if the current date is beyond the stated date in the list, and provides a new update for the date recurring date.
 
-Given below is an example usage scenario and how the checker mechanism behaves at each step. 
+Given below is an example usage scenario and how the checker feature behaves at each step. 
 
 Step 1. A new `Deadline` object is created and needs to be added to the existing list of task. Hence it calls `addTask()` method under `Data` class. 
 
@@ -114,15 +114,15 @@ Step 6. If `false` , there is no duplicates in the existing list, and the task c
 
 ### 4.3 CAP calculator feature
 
-The proposed undo/redo mechanism is facilitated by `CalculateCapAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
+The proposed undo/redo feature is facilitated by `CalculateCapAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
 
 * `CalculateCapAction#act()` - Calculate the user CAP based on stored user grades / input modules.
 * `CalculateCapAction#prepare()` - Parse user command to suitable parameter for `CalculateCapAction#act()` function.
 
-Given below is an example usage scenario and how thecap calculator mechanism behaves at each step.
+Given below is an example usage scenario and how thecap calculator feature behaves at each step.
 
-Step 1. The user executes `cap` command find his current CAP grade. Command is then parsed by `CalculateCapAction#prepare()` to be passed as arguments for `CalculateCapAction#act()`.
+Step 1. The user executes `cap` command to find his current CAP grade. Command is then parsed by `CalculateCapAction#prepare()` to be passed as arguments for `CalculateCapAction#act()`.
 
 Step 2. `CalculateCapAction#act()` retrieves data from the stored user's grades.
 
@@ -137,11 +137,11 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ### 4.4 Reminder Feature
 
-The proposed reminder mechanism is facilitated by `ReminderAction`. It extends `Action` and the output is passed onto `UI` for display. Additionally, it implements the following operations:
+The proposed reminder feature is facilitated by `ReminderAction`. It extends `Action` and the output is passed onto `UI` for display. Additionally, it implements the following operations:
 
 * `ReminderAction#act()` — List out the deadlines and events tasks that are due within 3 days
 
-Given below is an example usage scenario and how the reminder mechanism behaves at each step.
+Given below is an example usage scenario and how the reminder feature behaves at each step.
 
 Step 1. The user executes `reminder` command to list out tasks due within 3 days. Command is then parsed by `ReminderAction#act()`.
 
@@ -157,14 +157,14 @@ The following sequence diagram diagram shows how the reminder operation works
 
 ### 4.5 Remind Feature
 
-Another proposed manual reminder mechanism is facilitated by `RemindAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
+Another proposed manual reminder feature is facilitated by `RemindAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
 
 * `RemindAction#act()` - Set the reminder to be executed on the chosen time.
 * `RemindAction#prepare()` - Parse user command to suitable parameter for `RemindAction#act()` function.
 * `RemindAction#getSchedule` - Returns the schedule set by the user.
 
-Given below is an example usage scenario and how the remind mechanism behaves at each step.
+Given below is an example usage scenario and how the remind feature behaves at each step.
 
 Step 1. The user executes `remind [time]` command to set schedule for the reminder. Command is then parsed by `RemindAction#prepare()` to be passed as arguments for `RemindAction#act()`.
 
@@ -178,12 +178,12 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ### 4.6 Snooze Feature
 
-The proposed snooze mechanism is facilitated by `SnoozeAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
+The proposed snooze feature is facilitated by `SnoozeAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
 
 * `RemindAction#getNewInterval` - Returns the new interval set by the user.
 
-Given below is an example usage scenario and how the snooze mechanism behaves at each step.
+Given below is an example usage scenario and how the snooze feature behaves at each step.
 
 Step 1. The user executes `snooze` command to snooze for the reminder. 
 
@@ -197,13 +197,13 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ### 4.7 Postpone Feature
 
-The proposed undo/redo mechanism is facilitated by `PostponeAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
+The proposed undo/redo feature is facilitated by `PostponeAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
 
 * `PostponeAction#act()` - Postpone the deadline or event task by the chosen parameter.
 * `PostponeAction#prepare()` - Parse user command to suitable parameter for `PostponeAction#act()` function.
 
-Given below is an example usage scenario and how the postpone mechanism behaves at each step.
+Given below is an example usage scenario and how the postpone feature behaves at each step.
 
 Step 1. The user executes `postpone [index]` command to postpone the targeted task. Command is then parsed by `PostponeAction#prepare()` to be passed as arguments for `PostponeAction#act()`.
 
@@ -219,13 +219,13 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ### 4.8 Focus Feature
 
-The proposed focus mechanism is facilitated by `FocusAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
+The proposed focus feature is facilitated by `FocusAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
 
 * `FocusAction#act()` - Sets the task flag by the chosen parameter.
 * `FocusAction#prepare()` - Parse user command to suitable parameter for `PostponeAction#act()` function.
 
-Given below is an example usage scenario and how the focus mechanism behaves at each step.
+Given below is an example usage scenario and how the focus feature behaves at each step.
 
 Step 1. The user executes `focus [task type]` command to filter based on task type. Command is then parsed by `FocusAction#prepare()` to be passed as arguments for `FocusAction#act()`.
 
@@ -241,11 +241,12 @@ These operations are exposed in the Model interface as Model#commitAddressBook()
 ## Appendix A. Product scope
 ### Target user profile
 
- - has a need to manage significant number of schedules 
- - prefer desktop apps over other types 
- - can type fast
+ - Has a need to manage significant number of schedules 
+ - Prefer desktop apps over other types 
+ - Wants to manage their NUS module requirements 
+ - Can type fast
  - prefers typing to mouse interactions 
- - is reasonably comfortable using CLI apps 
+ - Is reasonably comfortable using CLI apps 
 
 ### Value proposition
 All in one app to track tasks and their dates, monitor productivity and calculate cap. 
@@ -258,7 +259,7 @@ All in one app to track tasks and their dates, monitor productivity and calculat
 | *** |Student before start of semester|List of module available|Easily Choose which modules to take|
 | ** |Student before start of semester|Find the modules either by keyword, module code or even MC |Easily see the desired modules |
 | ** |Student before start of semester|Select the modules but not taking it yet |Easily whether the MC fits my requirement |
-| *  |Student before start of semester|Find out the etails of the Module|To find out more about the modules.|
+| *  |Student before start of semester|Find out the details of the Module|To find out more about the modules.|
 | *** |Student before start of semester|Take the desired modules|Mark the modules that i want to take as taken  |
 | *** |Student during the semester|Add tasks such as todo,deadline and event into my list|Easily keep track of all the task i have to complete  |
 | ** |Student during the semester|Have a Reminder of which deadline is due soon|Ensure that no task is missed out  |
@@ -305,7 +306,7 @@ Use Case:
 
 ## Appendix D. Non-Functional Requirements
 
-1.  Should work on any  _mainstream OS_  as long as it has Java  `11`  or above installed.
+1.  Should work on _Windows, MAC, Linux[Preferably Ubunutu] as long as it has Java  `11`  or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 
@@ -321,13 +322,13 @@ _{More to be added}_
 ## Appendix F. Instructions for manual testing
 
 1. Launch and Shutdown 
-Step 1: Download the latest version of  `Duke`  from  [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).\
+Step 1: Download the latest version of  `DOMNUS`  from  [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).\
 Step 2: Copy the file to the folder you want to use as the home folder for your Mobile Nusmod.\
 Step 3: Open the Command Prompt if you are running on Windows or Terminal if you are running on Mac OS.\
 Step 4: Navigate to your home folder and type  **‘java -jar domnus.jar’**
 
 1. Launch and Shutdown 
-Step 1: Download the latest version of  `Duke`  from  [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).\
+Step 1: Download the latest version of  `DOMNUS`  from  [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).\
 Step 2: Copy the file to the folder you want to use as the home folder for your Mobile Nusmod.\
 Step 3: Open the Command Prompt if you are running on Windows or Terminal if you are running on Mac OS.\
 Step 4: Navigate to your home folder and type  **‘java -jar domnus.jar’**
