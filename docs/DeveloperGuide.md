@@ -4,28 +4,35 @@
 
 ## 1. Table of content
 **1. Table of content**\
-**2. Setting Up**\
-**3. Design**\
-&nbsp;&nbsp;&nbsp;3.1 Architecture\
-&nbsp;&nbsp;&nbsp;3.2 Main Layer\
-&nbsp;&nbsp;&nbsp;3.3 UI Layer\
-&nbsp;&nbsp;&nbsp;3.4 Command Interpreter Layer\
-&nbsp;&nbsp;&nbsp;3.5 Executor Layer\
-&nbsp;&nbsp;&nbsp;3.6 Storage Layer\
-**4. Implementation**\
-&nbsp;&nbsp;&nbsp;4.1 Module Planner Feature\
-&nbsp;&nbsp;&nbsp;4.2 Checker Feature\
-&nbsp;&nbsp;&nbsp;4.3 Cap Caculator Feature\
-&nbsp;&nbsp;&nbsp;4.4 Reminder Feature\
-&nbsp;&nbsp;&nbsp;4.5 Postpone Feature\
-**5. Appendix A Product Scope**\
-**6. Appendix B User Stories** \
-**7. Appendix C Use Cases** \
-**8. Appendix D Non-funcitonal Requirements** \
-**9. Appendix E Glossary** \
-**10. Appendix F. Instruction for Manual Testing**
+**2. Introduction**\
+**3. Setting Up**\
+**4. Design**\
+&nbsp;&nbsp;&nbsp;4.1 Architecture\
+&nbsp;&nbsp;&nbsp;4.2 Main Layer\
+&nbsp;&nbsp;&nbsp;4.3 UI Layer\
+&nbsp;&nbsp;&nbsp;4.4 Command Interpreter Layer\
+&nbsp;&nbsp;&nbsp;4.5 Executor Layer\
+&nbsp;&nbsp;&nbsp;4.6 Storage Layer\
+&nbsp;&nbsp;&nbsp;4.7 Flow of DOMSUN\
+**5. Implementation**\
+&nbsp;&nbsp;&nbsp;5.1 Module Planner Feature\
+&nbsp;&nbsp;&nbsp;5.2 Checker Feature\
+&nbsp;&nbsp;&nbsp;5.3 Cap Caculator Feature\
+&nbsp;&nbsp;&nbsp;5.4 Reminder Feature\
+&nbsp;&nbsp;&nbsp;5.5 Postpone Feature\
+**6. Appendix A Product Scope**\
+**7. Appendix B User Stories** \
+**8. Appendix C Use Cases** \
+**9. Appendix D Non-funcitonal Requirements** \
+**10. Appendix E Glossary** \
+**11. Appendix F. Instruction for Manual Testing**
 
-## 2. Setting Up
+## 2. Introduction
+Domsun is a CLI program that allows users to manage tasks and modules. <br>
+Users will be able to browse and select modules, create and arrange tasks, add tasks to modules,<br>
+create reminders and calculate their MCs / CAPs.
+
+## 3. Setting Up
 
 1.  Ensure that you have Java 11 or above installed.
 2.  Download the latest version of  `DOMNUS`  from  [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).
@@ -34,18 +41,18 @@
 5.  Navigate to your home folder and type ‘java -jar domnus.jar’
 6.  Type ‘bye’ to terminate your session.
 
-## 3. Design
+## 4. Design
 
-### 3.1 Architecture
+### 4.1 Architecture
 The **Architecture Diagram** below represents a high-level design overview of the App. Specifically, it is done with an **N-tier architectural style**, where the higher layers make use of services provided by lower layers. 
 
 ![here](Images/Architecture_Diagram.PNG)
 
 
-**3.2 Main Layer**<br>
+**4.2 Main Layer**<br>
 For the `main` layer, it contains a single class known as `DOMNUS`. 
 
-**3.3 UI Layer**<br>
+**4.3 UI Layer**<br>
 Main gets user input and displays messages through the use of UI component. 
 The UI layer entails the package *visualize*, which contains classes *ColoredString*, *Bitmap*, *UI*, *Cli*, 
 *FancyCli* and enumerations *Color* and *Sprite* in the following structure:
@@ -59,23 +66,23 @@ UI's interaction with the rest of the program<br>
 UI passes the user's input string out to the DOMNUS object, which then passes the string to the Command Interpreter layer.
 UI also reads data from the Data object for refreshing purposes, but does not modify it. 
 
-**1.3 Command Interpreter Layer**<br>
+**4.4 Command Interpreter Layer**<br>
 Upon receiving command from the UI, DOMNUS would pass the entire user input into Command Interpreter (CI)
 
-**1.4 Execute Layer**<br>
+**4.5 Execute Layer**<br>
 Once CI processed the user input, DOMNUS proceeds to redirect the input to Execute for execution of action. 
 
-**1.5 Storage Layer**<br>
+**4.6 Storage Layer**<br>
 Once CI processed the user input, DOMNUS proceeds to redirect the input to Execute for execution of action. 
 
-**1.6 Flow of DOMSUN**<br>
+**4.7 Flow of DOMSUN**<br>
 The sequence diagram below shows the main interaction of classes with each other throughout the whole lifecycle of DOMSUM.
 ![uml](Images/DOMSUM_Main_Flow.png)
 
-## 4. Implementation<br>
+## 5. Implementation<br>
 This section highlights some of our project's key feature and its implementation. 
 
-### 4.1 Module Planner Feature
+### 5.1 Module Planner Feature
 
 The module planner feature entails many *Actions* which extend `Action`. Their functionalities and usages
 are in the table below:
@@ -89,7 +96,7 @@ A typical flow of execution would be:
 1. blah
 1. blah
 
-### 4.2 Checker Feature 
+### 5.2 Checker Feature 
 ![here](Images/Checker_Diagram.png)
 
 The checker feature is facilitated by the utility class `Checker`. It is an independent class on its own without extensions and is stored under the `Data` package of our app. The class implements the following operations: 
@@ -112,7 +119,7 @@ Step 5. Now we proceed to call `checkDuplicates()` of Checker class.
 
 Step 6. If `false` , there is no duplicates in the existing list, and the task can be safely added. Otherwise, no action will be taken. 
 
-### 4.3 CAP calculator feature
+### 5.3 CAP calculator feature
 
 The proposed undo/redo feature is facilitated by `CalculateCapAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
@@ -135,7 +142,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 ![cap uml diagram](Images/Cap_Calculator_Diagram.JPG)
 
 
-### 4.4 Reminder Feature
+### 5.4 Reminder Feature
 
 The proposed reminder feature is facilitated by `ReminderAction`. It extends `Action` and the output is passed onto `UI` for display. Additionally, it implements the following operations:
 
@@ -155,7 +162,7 @@ The following sequence diagram diagram shows how the reminder operation works
 
 ![Reminder_Sequence_Diagram](Images/ReminderAction_Sequence_Diagram.png)
 
-### 4.5 Remind Feature
+### 5.5 Remind Feature
 
 Another proposed manual reminder feature is facilitated by `RemindAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
@@ -176,7 +183,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ![Postpone_Sequence_Diagram](Images/Remind.png)
 
-### 4.6 Snooze Feature
+### 5.6 Snooze Feature
 
 The proposed snooze feature is facilitated by `SnoozeAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
@@ -195,7 +202,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ![Postpone_Sequence_Diagram](Images/Snooze.png)
 
-### 4.7 Postpone Feature
+### 5.7 Postpone Feature
 
 The proposed undo/redo feature is facilitated by `PostponeAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
@@ -217,7 +224,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ![Postpone_Sequence_Diagram](Images/PostponeAction_Sequence_Diagram.png)
 
-### 4.8 Focus Feature
+### 5.8 Focus Feature
 
 The proposed focus feature is facilitated by `FocusAction`. It extends `Action` to execute command given by the user, output are then passed on to `Ui` for display. 
 Additionally, it implements the following operations:
@@ -320,12 +327,6 @@ _{More to be added}_
  - Private contact detail 
 
 ## Appendix F. Instructions for manual testing
-
-1. Launch and Shutdown 
-Step 1: Download the latest version of  `DOMNUS`  from  [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).\
-Step 2: Copy the file to the folder you want to use as the home folder for your Mobile Nusmod.\
-Step 3: Open the Command Prompt if you are running on Windows or Terminal if you are running on Mac OS.\
-Step 4: Navigate to your home folder and type  **‘java -jar domnus.jar’**
 
 1. Launch and Shutdown 
 Step 1: Download the latest version of  `DOMNUS`  from  [Our Release Page](https://github.com/AY2021S1-CS2113-T13-2/tp/releases/tag/v1.0).\
