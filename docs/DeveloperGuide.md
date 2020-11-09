@@ -80,11 +80,11 @@ UI gets user input through *nextline()*, and renders strings as a user-comprehen
 *update(String, Data)*.
 
 UI's interaction with the rest of the program<br>
-UI passes the user's input string out to the DOMNUS object, which then passes the string to the Command Interpreter layer.
+UI passes the user's input string out to the DOMSUN object, which then passes the string to the Command Interpreter layer.
 UI also reads data from the Data object for refreshing purposes, but does not modify it. 
 
 **4.4 Command Interpreter Layer**<br>
-Upon receiving command from the UI, DOMNUS would pass the entire user input into Command Interpreter (CI)
+Upon receiving command from the UI, DOMSUN would pass the entire user input into Command Interpreter (CI)
 
 **4.5 Execute Layer**<br>
 The `Execute` layer carries out the relevant actions required based on the analyzed input. All of the features in the program are stored under this layer which is under the package name `command`. To summarize, this layer is responsible for: 
@@ -104,8 +104,8 @@ During saving phase:
 2) For the module list: This layer saves any module marked `TAKEN` by the user onto a text file, together with the relevant module information such as module's code, and grade attained (if any).  
 
 **4.7 Flow of DOMSUN**<br>
-The sequence diagram below shows the main interaction of classes with each other throughout the whole lifecycle of DOMSUM.
-![uml](Images/DOMNUS_Main_Flow.png)
+The sequence diagram below shows the main interaction of classes with each other throughout the whole lifecycle of DOMSUN.
+![uml](Images/DOMSUN_Main_Flow.png)
 
 ## 5. Implementation<br>
 This section highlights some of our project's key feature and its implementation. 
